@@ -6,6 +6,7 @@
 package controller;
 
 
+import dao.BD;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -34,8 +35,7 @@ private void relatorioSemParametro(HttpServletRequest request, HttpServletRespon
  Connection conexao = null;
         try {
             
-            Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/scce");
+            conexao = BD.getConexao();   
             HashMap parametros = new HashMap();
             //parametros.put("P_ALUNO", Integer.parseInt(request.getParameter("txtMatricula")));
             String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio")+"/reportMatriculaSemParamentro.jasper";

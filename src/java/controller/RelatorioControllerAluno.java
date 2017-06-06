@@ -6,6 +6,7 @@
 package controller;
 
 
+import dao.BD;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -33,8 +34,7 @@ public class RelatorioControllerAluno extends HttpServlet {
 private void relatorioSemParametro(HttpServletRequest request, HttpServletResponse response) {
  Connection conexao = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/scce");
+            conexao = BD.getConexao();   
             HashMap parametros = new HashMap();
             
             //parametros.put("P_MATRICULA", Integer.parseInt(request.getParameter("txtMatricula")));
