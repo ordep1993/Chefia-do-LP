@@ -52,10 +52,10 @@ public class tipoContratoDAO {
     public List<TipoContrato> getAlltipoContratos() {
         EntityManager em = PersistenceUtil.getEntityManager();
         EntityTransaction tx = em.getTransaction();
-        List<tipoContrato> tipoContratos = null;
+        List<TipoContrato> tipoContratos = null;
         try {
             tx.begin();
-            TypedQuery<tipoContrato> query = em.createQuery("select t from tipoContrato t", tipoContrato.class);
+            TypedQuery<TipoContrato> query = em.createQuery("select t from tipoContrato t", TipoContrato.class);
             tipoContratos = query.getResultList();
             tx.commit();
         } catch (Exception e) {
@@ -66,16 +66,16 @@ public class tipoContratoDAO {
         } finally {
             PersistenceUtil.close(em);
         }
-        return TipoContratos;
+        return tipoContratos;
     }
 
     public TipoContrato gettipoContrato(int id) {
         EntityManager em = PersistenceUtil.getEntityManager();
         EntityTransaction tx = em.getTransaction();
-        tipoContrato tipoContrato = null;
+        TipoContrato tipoContrato = null;
         try {
             tx.begin();
-            tipoContrato = em.find(tipoContrato.class, id);
+            tipoContrato = em.find(TipoContrato.class, id);
             tx.commit();
         } catch (Exception e) {
             if (tx != null && tx.isActive()) {
@@ -93,7 +93,7 @@ public class tipoContratoDAO {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            em.remove(em.getReference(tipoContrato.class, tipoContrato.getIdTipoContrato()));
+            em.remove(em.getReference(TipoContrato.class, tipoContrato.getIdTipoContrato()));
             tx.commit();
         } catch (Exception e) {
             if (tx != null && tx.isActive()) {

@@ -30,8 +30,8 @@
                         <td> <c:out value="${turma.ano}" />
                         <td> <c:out value="${turma.semestre}" />
                         <td> <c:out value="${turma.maxAlunos}" />
-                        <td><a href="ManterTurmaController?acao=prepararOperacao&operacao=editar&codigo=${turma.codigo}"/>Editar</a></td>
-                        <td><a href="ManterTurmaController?acao=prepararOperacao&operacao=excluir&codigo=${turma.codigo}"/>Excluir</a></td>
+                        <td><a href="ManterTurmaController?acao=prepararOperacao&operacao=editar&codigo=${turma.codigo}">Editar</a></td>
+                        <td><a href="ManterTurmaController?acao=prepararOperacao&operacao=excluir&codigo=${turma.codigo}">Excluir</a></td>
                     </tr>
                 </c:forEach>
             </table>

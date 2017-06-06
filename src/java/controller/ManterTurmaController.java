@@ -43,7 +43,7 @@ public class ManterTurmaController extends HttpServlet {
             request.setAttribute("operacao", operacao);
             request.setAttribute("turmas", TurmaDAO.getInstance().getAllTurmas());
             if (!operacao.equals("incluir")) {
-                int codigo = Integer.parseInt(request.getParameter("txtCodigo"));
+                int codigo = Integer.parseInt(request.getParameter("codigo"));                
                 turma = TurmaDAO.getInstance().getTurma(codigo);
                 request.setAttribute("turma", turma);
             }
