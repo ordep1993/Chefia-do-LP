@@ -43,7 +43,7 @@ public class ManterDisciplinaController extends HttpServlet {
             request.setAttribute("operacao", operacao);
             request.setAttribute("professores", ProfessorDAO.getInstance().getAllProfessores());
             if (!operacao.equals("incluir")) {
-                int codDisciplina = Integer.parseInt(request.getParameter("codDisciplina"));
+                int codDisciplina = Integer.parseInt(request.getParameter("codigo"));
                 disciplina = DisciplinaDAO.getInstance().getDisciplina(codDisciplina);
                 request.setAttribute("disciplina", disciplina);
             }

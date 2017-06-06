@@ -43,7 +43,7 @@ public class ManterServidorController extends HttpServlet {
             request.setAttribute("operacao", operacao);
             request.setAttribute("servidores", ServidorDAO.getInstance().getAllServidores());
             if (!operacao.equals("incluir")) {
-                int matricula = Integer.parseInt(request.getParameter("txtMatricula"));
+                int matricula = Integer.parseInt(request.getParameter("matricula"));
                 servidor = ServidorDAO.getInstance().getServidor(matricula);
                 request.setAttribute("servidor", servidor);
             }

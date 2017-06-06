@@ -1,5 +1,6 @@
 package controller;
 
+import dao.BD;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,8 +19,7 @@ public class RelatorioAlunoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) {
  Connection conexao = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/scce");
+            conexao = BD.getConexao();   
             HashMap parametros = new HashMap();
             parametros.put("PAR_codCurso", Integer.parseInt(request.getParameter("txtMatricula")));
             String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio")+"/report8.jasper";

@@ -50,8 +50,8 @@
                         <td><c:out value="${professor.complemento}"/></td>
                         <td><c:out value="${professor.bairro}"/></td>
                         <td><c:out value="${professor.cep}"/></td>
-                        <td><a href="ManterProfessorController?acao=prepararOperacao&operacao=editar&matricula="${professor.matricula}"/>">Editar</a></td>
-                        <td><a href="ManterProfessorController?acao=prepararOperacao&operacao=excluir&matricula=${professor.matricula}"/>">Excluir</a></td>
+                        <td><a href="ManterProfessorController?acao=prepararOperacao&operacao=editar&matricula=${professor.matricula}"/>Editar</a></td>
+                        <td><a href="ManterProfessorController?acao=prepararOperacao&operacao=excluir&matricula=${professor.matricula}"/>Excluir</a></td>
                     </tr> 
                 </c:forEach>
             </table>

@@ -16,7 +16,7 @@
             <h4>Manter Curso</h4>
 
 
-        <form action="ManterCursoController?acao=confirmar${operacao}" method="post" name="frmManterCurso" onsubmit="return validarFormulario(this)">
+        <form action="ManterCursoController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterCurso" onsubmit="return validarFormulario(this)">
             <table id="tbManter">
                 <tr>
                     <td>Código:</td> 

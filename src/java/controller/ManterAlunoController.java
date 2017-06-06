@@ -32,7 +32,7 @@ public class ManterAlunoController extends HttpServlet {
             request.setAttribute("operacao", operacao);
             request.setAttribute("alunos", AlunoDAO.getInstance().getAllAlunos());
             if (!operacao.equals("incluir")) {
-                int matricula = Integer.parseInt(request.getParameter("txtMatricula"));
+                int matricula = Integer.parseInt(request.getParameter("matricula"));
                 aluno = AlunoDAO.getInstance().getAluno(matricula);
                 request.setAttribute("aluno", aluno);
             }

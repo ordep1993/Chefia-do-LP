@@ -53,8 +53,8 @@
                         <td> <c:out value="${servidor.bairro}" />
                         <td> <c:out value="${servidor.cep}" />
                         <td> <c:out value="${servidor.dataAdmissao}" />
-                        <td><a href="ManterServidorController?acao=prepararOperacao&operacao=editar&matricula=${servidor.matricula}"/>">Editar</a></td>
-                        <td><a href="ManterServidorController?acao=prepararOperacao&operacao=excluir&matricula=${servidor.matricula}"/>">Excluir</a></td>
+                        <td><a href="ManterServidorController?acao=prepararOperacao&operacao=editar&matricula=${servidor.matricula}"/>Editar</a></td>
+                        <td><a href="ManterServidorController?acao=prepararOperacao&operacao=excluir&matricula=${servidor.matricula}"/>Excluir</a></td>
                     </tr>
                 </c:forEach>
             </table>

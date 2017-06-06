@@ -68,8 +68,7 @@ private void relatorioComParametro(HttpServletRequest request, HttpServletRespon
  Connection conexao = null;
         try {
             
-            Class.forName("com.mysql.jdbc.Driver");
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost/scce");
+           conexao = BD.getConexao();   
             HashMap parametros = new HashMap();
             
             parametros.put("P_CODIGO", Integer.parseInt(request.getParameter("txtCodigo")));

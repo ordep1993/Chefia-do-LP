@@ -44,7 +44,7 @@ public class ManterMatriculaController extends HttpServlet {
             request.setAttribute("operacao", operacao);
             request.setAttribute("professores", ProfessorDAO.getInstance().getAllProfessores());
             if (!operacao.equals("incluir")) {
-                int codigo = Integer.parseInt(request.getParameter("txtCodigo"));
+                int codigo = Integer.parseInt(request.getParameter("codigo"));
                 matricula = MatriculaDAO.getInstance().getMatricula(codigo);
                 request.setAttribute("matricula", matricula);
             }

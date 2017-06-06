@@ -47,7 +47,7 @@ public class ManterAvaliacaoController extends HttpServlet {
             request.setAttribute("operacao", operacao);
             request.setAttribute("avaliacoes", AvaliacaoDAO.getInstance().getAllAvaliacoes());
             if (!operacao.equals("incluir")) {
-                int codigo = Integer.parseInt(request.getParameter("txtCodigo"));
+                int codigo = Integer.parseInt(request.getParameter("codigo"));
                 avaliacao = AvaliacaoDAO.getInstance().getAvaliacao(codigo);
                 request.setAttribute("avaliacao", avaliacao);
             }
