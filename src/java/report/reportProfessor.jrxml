@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportProfessor" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e88bab87-25ba-4cbb-ab71-60aa1d2b230e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="P_NOME" class="java.lang.String"/>
+	<parameter name="P_CODIGO" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     professor.`matricula` AS professor_matricula,
+     professor.`nome` AS professor_nome,
+     professor.`dataNasc` AS professor_dataNasc,
+     professor.`CPF` AS professor_CPF,
+     professor.`dataExpedicao` AS professor_dataExpedicao,
+     professor.`orgaoExpedidor` AS professor_orgaoExpedidor,
+     professor.`ufExpedicao` AS professor_ufExpedicao,
+     professor.`email` AS professor_email,
+     professor.`telefone` AS professor_telefone,
+     professor.`celular` AS professor_celular,
+     professor.`Logradouro` AS professor_Logradouro,
+     professor.`numero` AS professor_numero,
+     professor.`complemento` AS professor_complemento,
+     professor.`bairro` AS professor_bairro,
+     professor.`CEP` AS professor_CEP
+FROM
+     `professor` professor
+where $P{P_CODIGO}=  professor.`matricula` or $P{P_NOME}=   professor.`nome` order by   professor.`nome`]]>
+	</queryString>
+	<field name="professor_matricula" class="java.lang.Integer"/>
+	<field name="professor_nome" class="java.lang.String"/>
+	<field name="professor_dataNasc" class="java.lang.String"/>
+	<field name="professor_CPF" class="java.lang.Integer"/>
+	<field name="professor_dataExpedicao" class="java.lang.String"/>
+	<field name="professor_orgaoExpedidor" class="java.lang.String"/>
+	<field name="professor_ufExpedicao" class="java.lang.String"/>
+	<field name="professor_email" class="java.lang.String"/>
+	<field name="professor_telefone" class="java.lang.Integer"/>
+	<field name="professor_celular" class="java.lang.Integer"/>
+	<field name="professor_Logradouro" class="java.lang.String"/>
+	<field name="professor_numero" class="java.lang.Integer"/>
+	<field name="professor_complemento" class="java.lang.String"/>
+	<field name="professor_bairro" class="java.lang.String"/>
+	<field name="professor_CEP" class="java.lang.Integer"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="92b6af71-fa7a-434c-a35f-643cdf9802d2"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="e2207e78-0d59-4103-8702-b700610e1a6d"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Professor]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="712996f1-50b0-43d1-bbfc-da850cd9b2d1"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="55144f24-b924-43f0-9878-1ef8b830c244"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8b319a12-a9be-44e0-905d-6bfe75c884d3"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="37" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ddf29e23-8bb5-43f9-9e92-89fdf207cd0b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="74" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1adf22fa-cc3c-48ed-9a5c-b33526611b62"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DataNasc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="111" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7f6199d7-e75b-42c1-a776-66944e595b8f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="148" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="657d460d-f4fa-488e-bf22-9801e5b97257"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Expedicao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="185" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9e8a5612-8833-428f-b735-a7709bf40cc6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Orgao Expedidor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="222" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f0026228-0217-4ffa-86f8-b9d223cf6111"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Uf Expedicao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="259" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d35bc6f5-b4e8-4f97-9541-ecc27206805f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="296" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="63f6a5c3-467b-49c7-8a90-2e6b8043ed7d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="333" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e3b7b76e-0b5b-44e3-acb3-4b5e7035ce98"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Celular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="5884307e-57b4-48f0-b0a6-840c5e82b829"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Logradouro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="407" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="19861904-0311-4404-ad1a-c220babcf183"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="444" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9a151893-15e2-4733-99c8-b995c8b43ed3"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Complemento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="481" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0c314e8d-625d-4a77-b106-72cf452dd237"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="518" y="0" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="cfb8e7ca-8154-4972-a4eb-0f85a387a3a5"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEP]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="90f06a63-1018-4aab-9279-2bb87199c80f"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="37" height="20" uuid="f3070878-d044-4d4d-a520-f01c0e241e6a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_matricula}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="37" y="0" width="37" height="20" uuid="784c58af-22c9-411d-886c-9ed4db83fac6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_nome}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="74" y="0" width="37" height="20" uuid="9790a904-537d-4509-b7ba-4b9dcd056863"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_dataNasc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="111" y="0" width="37" height="20" uuid="5f900abe-4d0e-4fe2-b8f0-d18ab0da58ec"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_CPF}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="148" y="0" width="37" height="20" uuid="290ad1a4-bb43-4390-871f-ed240b57fb72"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_dataExpedicao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="185" y="0" width="37" height="20" uuid="568bb0e1-5c1e-4aa9-b075-5a29d24bb109"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_orgaoExpedidor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="222" y="0" width="37" height="20" uuid="1fe98f23-cdcf-4926-ae9b-e69dc7fe572e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_ufExpedicao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="259" y="0" width="37" height="20" uuid="e3d38a8a-e725-45c4-b8a3-e8aa2c2efd1c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_email}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="296" y="0" width="37" height="20" uuid="8d3d48d7-b634-406e-ab26-a72f7ba031a3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_telefone}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="333" y="0" width="37" height="20" uuid="085c1652-b12f-4ce6-b959-76f81de0ece8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_celular}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="370" y="0" width="37" height="20" uuid="6319074f-e926-45c5-a8cc-401d81f4cc25"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_Logradouro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="407" y="0" width="37" height="20" uuid="26f78fd3-fa3b-471c-a541-ac883f90b8c1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_numero}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="444" y="0" width="37" height="20" uuid="b10d2266-cc2e-43ca-91e8-e4ad2ef76dd3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_complemento}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="481" y="0" width="37" height="20" uuid="7e88ad6d-9cfe-4ca5-bcf0-b6b364f175fc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_bairro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="518" y="0" width="37" height="20" uuid="caf5bbf6-c684-458f-b87c-9397637314cc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{professor_CEP}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="7f4a1712-c242-47ba-a51a-c772956d2133"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="63fe3400-2797-4578-8801-b038698a503e"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="93b8f137-0db1-4ba9-8095-f542e7837e3d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

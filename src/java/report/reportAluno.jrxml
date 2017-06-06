@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportAluno" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5731211e-f37d-48ad-946e-1d7ea1e7ea52">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="P_ALUNO" class="java.lang.String"/>
+	<parameter name="P_MATRICULA" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     aluno.`matricula` AS aluno_matricula,
+     aluno.`nome` AS aluno_nome,
+     aluno.`dataNasc` AS aluno_dataNasc,
+     aluno.`CPF` AS aluno_CPF,
+     aluno.`dataExpedicao` AS aluno_dataExpedicao,
+     aluno.`email` AS aluno_email,
+     aluno.`telefone` AS aluno_telefone,
+     aluno.`celular` AS aluno_celular,
+     aluno.`logradouro` AS aluno_logradouro,
+     aluno.`numero` AS aluno_numero,
+     aluno.`complemento` AS aluno_complemento,
+     aluno.`bairro` AS aluno_bairro,
+     aluno.`CEP` AS aluno_CEP,
+     aluno.`anoInicio` AS aluno_anoInicio,
+     aluno.`semestreInicio` AS aluno_semestreInicio,
+     aluno.`estadoAluno` AS aluno_estadoAluno
+FROM
+     `aluno` aluno
+where $P{P_ALUNO} =  aluno.`nome` and $P{P_MATRICULA} = aluno.`matricula`]]>
+	</queryString>
+	<field name="aluno_matricula" class="java.lang.Integer"/>
+	<field name="aluno_nome" class="java.lang.String"/>
+	<field name="aluno_dataNasc" class="java.lang.String"/>
+	<field name="aluno_CPF" class="java.lang.Integer"/>
+	<field name="aluno_dataExpedicao" class="java.lang.String"/>
+	<field name="aluno_email" class="java.lang.String"/>
+	<field name="aluno_telefone" class="java.lang.Integer"/>
+	<field name="aluno_celular" class="java.lang.Integer"/>
+	<field name="aluno_logradouro" class="java.lang.String"/>
+	<field name="aluno_numero" class="java.lang.Integer"/>
+	<field name="aluno_complemento" class="java.lang.String"/>
+	<field name="aluno_bairro" class="java.lang.String"/>
+	<field name="aluno_CEP" class="java.lang.Integer"/>
+	<field name="aluno_anoInicio" class="java.lang.Integer"/>
+	<field name="aluno_semestreInicio" class="java.lang.Integer"/>
+	<field name="aluno_estadoAluno" class="java.lang.Boolean"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="e14f1075-525e-46b4-9659-362edb5535a4"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="817ae64a-70ed-4608-a075-a985a2003a0f"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Alunos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="c7b33157-d91a-45b2-b7d9-9c76a8cd6e8f"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="902de003-1d0d-423c-bc06-7f37c597c10d"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="cfdf63da-bbde-46e7-8cf9-4a29807ad164"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="34" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="44c70d16-24f9-4c07-ba27-9f370e49889b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="68" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c2c455fc-56c3-45c5-a997-dcbe515f04b3"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Nascimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="102" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="19c236a6-abf8-4cd2-a83b-8c9cd8bd0073"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="136" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="279a180d-0421-476b-802f-ff9b396be04e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Expedicao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="170" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="95aa2288-c700-4828-bb98-2d0a93ec9bb5"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="204" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d8d6786d-9942-40f8-9e22-1f509cc3d314"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="238" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ef7cd24a-25d0-4dbc-928d-b50f7767e1f5"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Celular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="272" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c66f38d7-81a5-422e-9413-cbd712f17c28"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Logradouro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="306" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="5416db0a-1ff4-4952-be11-82e5c4210395"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="340" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6afee8fd-46aa-4bf6-ac04-8e3d78fe11cd"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Complemento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="374" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="491f0c9e-f8da-4c7e-91c2-be5e8e655f75"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bairro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="408" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="fcc00838-6c19-4914-92da-bd1845d0a218"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="442" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1d9de416-12f7-4786-af41-4ca00519f234"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ano Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="476" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="828f9d6a-b9d3-4a0c-9801-f849cd093666"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Semestre Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="510" y="0" width="34" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="dbca6bd3-821b-4df5-918c-310184289741"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado Aluno]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="11b5618a-4ac8-444b-8af5-cb632bb27abf"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="34" height="20" uuid="b17345de-2a2f-4943-a677-22e2191c48bd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_matricula}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="34" y="0" width="34" height="20" uuid="cec413a7-d2f3-480b-be1b-38869f8d3533"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_nome}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="68" y="0" width="34" height="20" uuid="b4f90487-823b-4b1d-a32d-c78c89f133c8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_dataNasc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="102" y="0" width="34" height="20" uuid="a484aa94-759b-4021-8946-a9f4cf14d2ae"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_CPF}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="136" y="0" width="34" height="20" uuid="0b058538-417f-4ad8-b637-cadd557fae0e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_dataExpedicao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="170" y="0" width="34" height="20" uuid="1a5b39fa-d510-45c2-af21-c780cf812009"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_email}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="204" y="0" width="34" height="20" uuid="a7aa03d3-4ba1-479d-9b85-83ce03dea0c5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_telefone}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="238" y="0" width="34" height="20" uuid="73f8ff21-9f7a-498c-a264-41e00fe48003"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_celular}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="272" y="0" width="34" height="20" uuid="ff06e7b2-97c4-4188-82e2-75b8fcc34002"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_logradouro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="306" y="0" width="34" height="20" uuid="84c1f529-6261-4050-9696-e74e4ddcdaa1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_numero}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="340" y="0" width="34" height="20" uuid="a01998a8-8fb3-4794-9d1f-9d6a78beaa4b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_complemento}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="374" y="0" width="34" height="20" uuid="c448212d-1222-417a-a0ba-7f83e092f115"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_bairro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="408" y="0" width="34" height="20" uuid="c8ee6d42-4fb3-4d26-ac93-48fd9f2c1158"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_CEP}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="442" y="0" width="34" height="20" uuid="1751fdf9-5cc5-4f95-a817-e992722da5e5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_anoInicio}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="476" y="0" width="34" height="20" uuid="15eef77a-b98f-4d71-841c-f6158c4e8091"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_semestreInicio}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="510" y="0" width="34" height="20" uuid="ab9815d4-4668-470e-85c6-9ac27134f247"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_estadoAluno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="a1ccdea1-ec62-4311-a71b-ec01c82f3b53"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="fb631269-f7c7-4d43-b89c-768f03205662"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="f8d0bc0c-3081-4f19-acfc-ebfef53bfe4e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

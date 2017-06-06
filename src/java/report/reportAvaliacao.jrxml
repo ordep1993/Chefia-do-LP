@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportAvaliacao" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="46ef43c9-7e12-4c04-b5ba-3862606728a2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="P_CODIGO" class="java.lang.String"/>
+	<parameter name="P_DESCRICAO" class="java.lang.String"/>
+	<parameter name="P_ALUNO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     avaliacao.`codigo` AS avaliacao_codigo,
+     avaliacao.`avaliacao1` AS avaliacao_avaliacao1,
+     avaliacao.`avaliacao2` AS avaliacao_avaliacao2,
+     avaliacao.`avaliacaoFinal` AS avaliacao_avaliacaoFinal,
+     avaliacao.`codigoAluno` AS avaliacao_codigoAluno,
+     avaliacao.`codigoDisciplina` AS avaliacao_codigoDisciplina,
+     disciplina.`codigo` AS disciplina_codigo,
+     disciplina.`descricao` AS disciplina_descricao,
+     disciplina.`numAula` AS disciplina_numAula,
+     disciplina.`ementa` AS disciplina_ementa,
+     disciplina.`bibliografia` AS disciplina_bibliografia,
+     aluno.`matricula` AS aluno_matricula,
+     aluno.`nome` AS aluno_nome,
+     aluno.`dataNasc` AS aluno_dataNasc,
+     aluno.`CPF` AS aluno_CPF,
+     aluno.`dataExpedicao` AS aluno_dataExpedicao,
+     aluno.`email` AS aluno_email,
+     aluno.`telefone` AS aluno_telefone,
+     aluno.`celular` AS aluno_celular,
+     aluno.`logradouro` AS aluno_logradouro,
+     aluno.`numero` AS aluno_numero,
+     aluno.`complemento` AS aluno_complemento,
+     aluno.`bairro` AS aluno_bairro,
+     aluno.`CEP` AS aluno_CEP,
+     aluno.`anoInicio` AS aluno_anoInicio,
+     aluno.`semestreInicio` AS aluno_semestreInicio,
+     aluno.`estadoAluno` AS aluno_estadoAluno
+FROM
+     `aluno` aluno INNER JOIN `avaliacao` avaliacao ON aluno.`matricula` = avaliacao.`codigoAluno`
+     INNER JOIN `disciplina` disciplina ON avaliacao.`codigoDisciplina` = disciplina.`codigo`
+ where $P{P_CODIGO} = avaliacao.`codigo` or $P{P_DESCRICAO} =  disciplina.`descricao`or $P{P_ALUNO} = aluno.`nome` order by disciplina.`codigo`]]>
+	</queryString>
+	<field name="avaliacao_codigo" class="java.lang.Integer"/>
+	<field name="avaliacao_avaliacao1" class="java.lang.Integer"/>
+	<field name="avaliacao_avaliacao2" class="java.lang.Integer"/>
+	<field name="avaliacao_avaliacaoFinal" class="java.lang.Integer"/>
+	<field name="avaliacao_codigoAluno" class="java.lang.String"/>
+	<field name="avaliacao_codigoDisciplina" class="java.lang.String"/>
+	<field name="disciplina_codigo" class="java.lang.Integer"/>
+	<field name="disciplina_descricao" class="java.lang.String"/>
+	<field name="disciplina_numAula" class="java.lang.Integer"/>
+	<field name="disciplina_ementa" class="java.lang.String"/>
+	<field name="disciplina_bibliografia" class="java.lang.String"/>
+	<field name="aluno_matricula" class="java.lang.Integer"/>
+	<field name="aluno_nome" class="java.lang.String"/>
+	<field name="aluno_dataNasc" class="java.lang.String"/>
+	<field name="aluno_CPF" class="java.lang.Integer"/>
+	<field name="aluno_dataExpedicao" class="java.lang.String"/>
+	<field name="aluno_email" class="java.lang.String"/>
+	<field name="aluno_telefone" class="java.lang.Integer"/>
+	<field name="aluno_celular" class="java.lang.Integer"/>
+	<field name="aluno_logradouro" class="java.lang.String"/>
+	<field name="aluno_numero" class="java.lang.Integer"/>
+	<field name="aluno_complemento" class="java.lang.String"/>
+	<field name="aluno_bairro" class="java.lang.String"/>
+	<field name="aluno_CEP" class="java.lang.Integer"/>
+	<field name="aluno_anoInicio" class="java.lang.Integer"/>
+	<field name="aluno_semestreInicio" class="java.lang.Integer"/>
+	<field name="aluno_estadoAluno" class="java.lang.Boolean"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="107f9c9b-821e-4204-ba94-bb1d3423189b"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="b263cb6e-2366-4fdb-8648-5b496292fe1f"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Avaliação]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="172b0a72-a426-474e-87eb-6bccffbdf7bf"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="8575bb6a-05d1-461b-a971-d0eaef1bdf4c"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="17fdf0da-5482-415b-af59-e1af023dd497"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="92" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="90064e28-bbf5-427b-8c64-10644294688d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Avaliacao1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="184" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="56ca8b1d-9662-466e-ae51-244184f26806"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Avaliação2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b195e205-2165-4d5d-a6da-a06e144fe093"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Avaliação Final]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="368" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e84c7928-8637-463c-a61c-a400c48f6149"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4235e384-d235-47dd-b119-6a759d939e24"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aluno]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="1cd01ad0-c790-48c3-87d1-89a033d59b95"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="92" height="20" uuid="068e7f46-4548-40d0-9485-2d1a1f40f026"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao_codigo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="92" y="0" width="92" height="20" uuid="fd879587-e546-4c3d-8e7a-50f2070d8abb"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao_avaliacao1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="184" y="0" width="92" height="20" uuid="0b03c89d-8b50-4680-a549-4c16d44449f2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao_avaliacao2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="276" y="0" width="92" height="20" uuid="1ff7e553-1224-4d76-a971-deae8bc14cf5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao_avaliacaoFinal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="368" y="0" width="92" height="20" uuid="08a5a4bd-4cac-44f6-b381-727b1aff8854"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{disciplina_descricao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="460" y="0" width="92" height="20" uuid="6b243a8d-0f06-48c5-8968-cc2ac28409c7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="6b76290b-db6b-412a-8b10-284dc55c34e5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="6fb58a9f-1faa-4a1a-a210-3b791018b393"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="5ba8e528-f1ca-4fc0-8e3a-90221678cdd4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

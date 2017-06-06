@@ -1,0 +1,142 @@
+body{
+    margin:0 0 0 0;
+    padding: 0;
+    border: 0;
+    background-color: #a3b5d0;
+    font-family: arial;
+}
+#top h1 {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+     margin-top: 0px;
+    padding-top: 12px;
+    font-size: 40px;
+}
+#top {
+    width: 100%;
+    height: 80px;
+    min-width: 650px;
+    background-color: #415e9b;
+}
+#container{  
+    min-width: 960px;
+    min-height: 555px;
+    width: 99%;
+    border: 2px solid #b8bbfd;
+    margin: 5px auto;
+    background-color: #e9ebee;
+}
+#tbMenu{
+    margin: 70px auto;
+}
+#tbMenu button:hover{
+    box-shadow: 3px 3px #5c9048;
+    background-color: #345f24;
+} 
+#tbMenu button{
+    font-size: 14px;
+    padding: 15px 40px;
+    color: #ffffff;
+    background-color: #5c9048;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px #464646;
+}
+#tbPesq, #tbPesq td, #tbPesq tr, #tbPesq th{
+    margin: 25px 5px auto 5px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    font-size: 12px;
+    border: 2px solid #7494d8;
+}
+.title{
+    background-color: #415e9b;
+    color: #fff;
+}
+#container h4{
+    font-size: 31px;
+    margin: 25px 0 0 65px;
+    background-color: #00;
+    color: #5d5d5d;
+    font-weight: bold;
+}
+#container form input {
+    float: left;
+    margin: 17px 10px 0 14px;
+   
+}
+#tbPesqAvaliacao, #tbPesqAvaliacao td, #tbPesqAvaliacao tr, #tbPesqAvaliacao th{
+    margin: 25px auto 5px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    font-size: 15px;
+    border: 2px solid #7494d8;
+}
+#tbPesqAvaliacao th{
+       padding: 10px;
+}
+#tbPesqProf th{
+       padding: 10px;
+}
+#tbPesqProf, #tbPesqProf td, #tbPesqProf tr, #tbPesqProf th{
+    margin: 25px 5px auto 5px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    font-size: 15px;
+    border: 2px solid #7494d8;
+}
+#tbPesqServ th{
+       padding: 10px;
+}
+#tbPesqServ, #tbPesqServ td, #tbPesqServ tr, #tbPesqServ th{
+    margin: 25px 5px auto 5px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    font-size: 12px;
+    border: 2px solid #7494d8;
+}
+#tbManter td input {
+    border-style: none;
+    padding: 5px 0px 5px 0;
+    size: 6;
+    margin: 0 0 0 0;
+    background-color: #fbfbfb;
+    border: 1px solid #b8bbfd;
+    border-radius: 5px;
+}
+#tbManter td {
+    font-weight: bold;
+    color: #5d5d5d;
+    text-decoration: none;
+}
+#tbManter {
+    margin: 0 auto;
+}
+.btnConf{
+    color: #0cc713;
+    width: 75px;
+    font-weight: bold;
+}
+.btnIncluir {
+    font-size: 14px;
+    padding: 5px 20px;
+    color: #ffffff;
+    background-color: #5c9048;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px #464646;
+}
+.btnInicio{
+    font-size: 14px;
+    padding: 5px 20px;
+    color: #ffffff;
+    background-color: #b4bd02;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px #464646;
+}
+   

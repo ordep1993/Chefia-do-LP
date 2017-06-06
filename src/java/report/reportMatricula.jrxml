@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportMatricula" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ce5b1cf-8b26-4494-b8ed-dc9eeeed7957">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="P_MATRICULA" class="java.lang.Integer"/>
+	<parameter name="P_CURSO" class="java.lang.String"/>
+	<parameter name="P_DISCIPLINA" class="java.lang.String"/>
+	<parameter name="P_TURMA" class="java.lang.String"/>
+	<parameter name="P_ALUNO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     matricula.`codigo` AS matricula_codigo,
+     matricula.`codigoCurso` AS matricula_codigoCurso,
+     matricula.`codigoDisciplina` AS matricula_codigoDisciplina,
+     matricula.`codigoTurma` AS matricula_codigoTurma,
+     matricula.`codigoAluno` AS matricula_codigoAluno,
+     curso.`codigo` AS curso_codigo,
+     curso.`descricao` AS curso_descricao,
+     curso.`cargaHoraria` AS curso_cargaHoraria,
+     curso.`codigoProfessor` AS curso_codigoProfessor,
+     disciplina.`codigo` AS disciplina_codigo,
+     disciplina.`descricao` AS disciplina_descricao,
+     disciplina.`numAula` AS disciplina_numAula,
+     disciplina.`ementa` AS disciplina_ementa,
+     disciplina.`bibliografia` AS disciplina_bibliografia,
+     turma.`codigo` AS turma_codigo,
+     turma.`ano` AS turma_ano,
+     turma.`semestre` AS turma_semestre,
+     turma.`maxAlunos` AS turma_maxAlunos,
+     aluno.`matricula` AS aluno_matricula,
+     aluno.`nome` AS aluno_nome,
+     aluno.`dataNasc` AS aluno_dataNasc,
+     aluno.`CPF` AS aluno_CPF,
+     aluno.`dataExpedicao` AS aluno_dataExpedicao,
+     aluno.`email` AS aluno_email,
+     aluno.`telefone` AS aluno_telefone,
+     aluno.`celular` AS aluno_celular,
+     aluno.`logradouro` AS aluno_logradouro,
+     aluno.`numero` AS aluno_numero,
+     aluno.`complemento` AS aluno_complemento,
+     aluno.`bairro` AS aluno_bairro,
+     aluno.`CEP` AS aluno_CEP,
+     aluno.`anoInicio` AS aluno_anoInicio,
+     aluno.`semestreInicio` AS aluno_semestreInicio,
+     aluno.`estadoAluno` AS aluno_estadoAluno
+FROM
+     `curso` curso INNER JOIN `matricula` matricula ON curso.`codigo` = matricula.`codigoCurso`
+     INNER JOIN `disciplina` disciplina ON matricula.`codigoDisciplina` = disciplina.`codigo`
+     INNER JOIN `turma` turma ON matricula.`codigoTurma` = turma.`codigo`
+     INNER JOIN `aluno` aluno ON matricula.`codigoAluno` = aluno.`matricula`
+where $P_{P_MATRICULA} =  matricula.`codigo` or $P{P_CURSO}= curso.`descricao` or $P{P_DISCIPLINA} = disciplina.`descricao` or $P{TURMA} =  turma.`codigo` or $P{P_ALUNO} aluno.`nome`
+order by aluno.`nome`]]>
+	</queryString>
+	<field name="matricula_codigo" class="java.lang.Integer"/>
+	<field name="matricula_codigoCurso" class="java.lang.String"/>
+	<field name="matricula_codigoDisciplina" class="java.lang.String"/>
+	<field name="matricula_codigoTurma" class="java.lang.String"/>
+	<field name="matricula_codigoAluno" class="java.lang.String"/>
+	<field name="curso_codigo" class="java.lang.Integer"/>
+	<field name="curso_descricao" class="java.lang.String"/>
+	<field name="curso_cargaHoraria" class="java.lang.Integer"/>
+	<field name="curso_codigoProfessor" class="java.lang.String"/>
+	<field name="disciplina_codigo" class="java.lang.Integer"/>
+	<field name="disciplina_descricao" class="java.lang.String"/>
+	<field name="disciplina_numAula" class="java.lang.Integer"/>
+	<field name="disciplina_ementa" class="java.lang.String"/>
+	<field name="disciplina_bibliografia" class="java.lang.String"/>
+	<field name="turma_codigo" class="java.lang.String"/>
+	<field name="turma_ano" class="java.lang.Integer"/>
+	<field name="turma_semestre" class="java.lang.Integer"/>
+	<field name="turma_maxAlunos" class="java.lang.Integer"/>
+	<field name="aluno_matricula" class="java.lang.Integer"/>
+	<field name="aluno_nome" class="java.lang.String"/>
+	<field name="aluno_dataNasc" class="java.lang.String"/>
+	<field name="aluno_CPF" class="java.lang.Integer"/>
+	<field name="aluno_dataExpedicao" class="java.lang.String"/>
+	<field name="aluno_email" class="java.lang.String"/>
+	<field name="aluno_telefone" class="java.lang.Integer"/>
+	<field name="aluno_celular" class="java.lang.Integer"/>
+	<field name="aluno_logradouro" class="java.lang.String"/>
+	<field name="aluno_numero" class="java.lang.Integer"/>
+	<field name="aluno_complemento" class="java.lang.String"/>
+	<field name="aluno_bairro" class="java.lang.String"/>
+	<field name="aluno_CEP" class="java.lang.Integer"/>
+	<field name="aluno_anoInicio" class="java.lang.Integer"/>
+	<field name="aluno_semestreInicio" class="java.lang.Integer"/>
+	<field name="aluno_estadoAluno" class="java.lang.Boolean"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="8411eaab-b5d0-41a6-abe9-67e4a86d242c"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="f267f38c-53ed-4d9d-8281-741a9e898e5c"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Matricula]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="7c1642a2-dee7-493c-8f2f-ccc6229a8df6"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="aa555575-e09c-47ef-bc4e-4ce6ccbbbb62"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="75dd52b3-9594-415b-a255-ba1ff0d22961"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="111" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="da421414-0922-4a68-9697-de41733157d3"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Curso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="222" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a931d2db-a20d-4b6a-b256-180271c3d931"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Disciplina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="333" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="319a6410-2b7a-4583-b1d6-9f5415c5a514"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="444" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="32104032-ac83-4786-92b6-431f88648fd7"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aluno]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="5978f7a2-d8f8-4b28-bd6b-144241a5b477"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="111" height="20" uuid="cf2126fa-0503-4922-8f8e-066cd54376d4"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{matricula_codigo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="111" y="0" width="111" height="20" uuid="53548130-d320-4dbe-b8ca-1ad35250bafd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{curso_descricao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="222" y="0" width="111" height="20" uuid="e0d4ac7a-425e-4fb8-9ce9-29e01c7a058d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{disciplina_descricao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="333" y="0" width="111" height="20" uuid="5c7f078e-08bb-4b87-90c0-351bfd834e6b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{turma_codigo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="444" y="0" width="111" height="20" uuid="01d4454e-138a-45b1-9a88-8020ac10b3b7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aluno_nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="ab724797-f80a-4be7-845f-8c196e1d05ef"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="3a753b8c-dd8a-4552-b525-015f9a07a89a"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="ddb17656-4c99-47c1-adcb-fee7b04178af"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
