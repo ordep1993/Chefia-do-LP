@@ -5,6 +5,7 @@
 package controller;
 
 import dao.CursoDAO;
+import dao.ProfessorDAO;
 import java.io.IOException;
 import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;

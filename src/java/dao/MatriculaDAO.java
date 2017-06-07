@@ -32,11 +32,24 @@ public class MatriculaDAO {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            if (matricula.getCodigo() != null) {
-                em.merge(matricula);
-            } else {
                 em.persist(matricula);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null && tx.isActive()) {
+                tx.rollback();
             }
+            throw new RuntimeException(e);
+        } finally {
+            PersistenceUtil.close(em);
+        }
+    }
+    
+       public void alterar(Matricula matricula) {
+        EntityManager em = PersistenceUtil.getEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+                em.merge(matricula);
             tx.commit();
         } catch (Exception e) {
             if (tx != null && tx.isActive()) {

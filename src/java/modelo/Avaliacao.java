@@ -25,8 +25,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "avaliacao")
 @XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Avaliacao.findAll", query = "SELECT a FROM Avaliacao a")})
 public class Avaliacao implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -47,14 +45,12 @@ public class Avaliacao implements Serializable {
     @NotNull
     @Column(name = "avaliacaoFinal")
     private int avaliacaoFinal;
-    @Basic(optional = false)
-    @NotNull
-    @JoinColumn(name = "codigoDisciplina", referencedColumnName = "codigo")
-    @ManyToOne(optional = false)
-    private Disciplina codigoDisciplina;    
     @JoinColumn(name = "codigoAluno", referencedColumnName = "matricula")
     @ManyToOne(optional = false)
     private Aluno codigoAluno;
+    @JoinColumn(name = "codigoDisciplina", referencedColumnName = "codigo")
+    @ManyToOne(optional = false)
+    private Disciplina codigoDisciplina;
 
     public Avaliacao() {
     }
@@ -70,7 +66,6 @@ public class Avaliacao implements Serializable {
         this.avaliacaoFinal = avaliacaoFinal;
         this.codigoAluno = codigoAluno;
         this.codigoDisciplina = codigoDisciplina;
-       
     }
 
     public Integer getCodigo() {
@@ -105,20 +100,20 @@ public class Avaliacao implements Serializable {
         this.avaliacaoFinal = avaliacaoFinal;
     }
 
-    public Disciplina getCodigoDisciplina() {
-        return codigoDisciplina;
-    }
-
-    public void setCodigoDisciplina(Disciplina codigoDisciplina) {
-        this.codigoDisciplina = codigoDisciplina;
-    }
-
     public Aluno getCodigoAluno() {
         return codigoAluno;
     }
 
     public void setCodigoAluno(Aluno codigoAluno) {
         this.codigoAluno = codigoAluno;
+    }
+
+    public Disciplina getCodigoDisciplina() {
+        return codigoDisciplina;
+    }
+
+    public void setCodigoDisciplina(Disciplina codigoDisciplina) {
+        this.codigoDisciplina = codigoDisciplina;
     }
 
     @Override

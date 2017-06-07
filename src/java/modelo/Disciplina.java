@@ -8,6 +8,7 @@ package modelo;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -30,6 +31,9 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Disciplina.findAll", query = "SELECT d FROM Disciplina d")})
 public class Disciplina implements Serializable {
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codigoDisciplina")
+    private Collection<Avaliacao> avaliacaoCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -146,6 +150,15 @@ public class Disciplina implements Serializable {
     @Override
     public String toString() {
         return "modelo.Disciplina[ codigo=" + codigo + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Avaliacao> getAvaliacaoCollection() {
+        return avaliacaoCollection;
+    }
+
+    public void setAvaliacaoCollection(Collection<Avaliacao> avaliacaoCollection) {
+        this.avaliacaoCollection = avaliacaoCollection;
     }
     
 }

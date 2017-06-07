@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import dao.AvaliacaoDAO;
@@ -13,10 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Heleno
- */
+
 public class PesquisarAvaliacaoController extends HttpServlet {
 
     /**
@@ -30,7 +23,7 @@ public class PesquisarAvaliacaoController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("avaliacoes", AvaliacaoDAO.getInstance().getAllAvaliacoes());
+        request.setAttribute("avaliacoes", AvaliacaoDAO.getInstance().getAllAvaliacoes());        
         RequestDispatcher view = request.getRequestDispatcher("/pesquisarAvaliacao.jsp");
         view.forward(request, response);
     }

@@ -1,15 +1,8 @@
 package controller;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 import dao.AlunoDAO;
 import dao.AvaliacaoDAO;
 import dao.DisciplinaDAO;
-import dao.ProfessorDAO;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,11 +13,6 @@ import modelo.Aluno;
 import modelo.Avaliacao;
 import modelo.Disciplina;
 
-
-/**
- *
- * @author Marco
- */
 public class ManterAvaliacaoController extends HttpServlet {
 
     private Avaliacao avaliacao;
@@ -90,7 +78,7 @@ public class ManterAvaliacaoController extends HttpServlet {
                 avaliacao.setAvaliacaoFinal(avaliacaoFinal);
                 avaliacao.setCodigoAluno(aluno);
                 avaliacao.setCodigoDisciplina(disciplina);
-                AvaliacaoDAO.getInstance().salvar(avaliacao);
+                AvaliacaoDAO.getInstance().alterar(avaliacao);
             } else if (operacao.equals("excluir")) {
                 AvaliacaoDAO.getInstance().excluir(avaliacao);
             }

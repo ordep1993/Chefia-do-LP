@@ -33,8 +33,8 @@
                     <tr>
                         <td>Coordenador:</td>
                         <td>
-                            <select name="optProfessor" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="0" <c:if test="${curso.professor.nome == null}"> selected</c:if>> </option>  
+                            <select name="optProfessor" >
+                            <option value="0" <c:if test="${curso.professor.matricula == null}"> selected</c:if>> </option>  
                             <c:forEach items="${professores}" var="professor">
                                 <option value="${professor.matricula}" <c:if test="${curso.professor.matricula == professor.matricula}"> selected</c:if>>${professor.nome}</option>  
                             </c:forEach>
