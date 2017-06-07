@@ -42,7 +42,10 @@ public class ManterMatriculaController extends HttpServlet {
         try {
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao);
-            request.setAttribute("matriculas", MatriculaDAO.getInstance().getAllMatriculas());
+            request.setAttribute("alunos", AlunoDAO.getInstance().getAllAlunos());
+            request.setAttribute("cursos", CursoDAO.getInstance().getAllCursos());
+            request.setAttribute("disciplinas", DisciplinaDAO.getInstance().getAllDisciplinas());
+            request.setAttribute("turmas", TurmaDAO.getInstance().getAllTurmas());
             if (!operacao.equals("incluir")) {
                 int codigo = Integer.parseInt(request.getParameter("codigo"));
                 matricula = MatriculaDAO.getInstance().getMatricula(codigo);
@@ -63,10 +66,10 @@ public class ManterMatriculaController extends HttpServlet {
         try {
             String operacao = request.getParameter("operacao");
             int codigo = Integer.parseInt(request.getParameter("txtCodigo"));
-            int codAluno = Integer.parseInt(request.getParameter("txtCodAluno"));
-            int codCurso = Integer.parseInt(request.getParameter("txtCodCurso"));
-            int codDisciplina = Integer.parseInt(request.getParameter("txtCodDisciplina"));
-            int codTurma = Integer.parseInt(request.getParameter("txtCodTurma"));
+            int codAluno = Integer.parseInt(request.getParameter("optAluno"));
+            int codCurso = Integer.parseInt(request.getParameter("optCurso"));
+            int codDisciplina = Integer.parseInt(request.getParameter("optDisciplina"));
+            int codTurma = Integer.parseInt(request.getParameter("optTurma"));
             Aluno aluno = null;
             Curso curso = null;
             Disciplina disciplina = null;
@@ -84,7 +87,7 @@ public class ManterMatriculaController extends HttpServlet {
                 curso = CursoDAO.getInstance().getCurso(codCurso);
             }
             if (operacao.equals("incluir")) {
-                matricula = new Matricula(codigo);
+                matricula = new Matricula(codigo, aluno , curso , disciplina , turma);
                 MatriculaDAO.getInstance().salvar(matricula);
             } else if (operacao.equals("editar")) {
                 matricula.setCodigo(codigo);

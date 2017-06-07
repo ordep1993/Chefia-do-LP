@@ -15,7 +15,7 @@
         <div id="container">
             <h4>Manter Matricula</h4>
 
-        <form action="ManterMatriculaController?acao=confirmar${operacao}" method="post" name="frmManterMatricula" onsubmit="return validarFormulario(this)">
+        <form action="ManterMatriculaController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="frmManterMatricula" >
             <table id="tbManter">
                 <tr>
                     <td>Código:</td> 
@@ -24,10 +24,12 @@
                     <tr>
                         <td>Curso:</td>
                         <td>
-                            <select name="optCurso" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="0" <c:if test="${matricula.curso.descricao == null}"> selected</c:if>> </option>  
+                            <select name="optCurso" >
+                            <option value="0" <c:if test="${matricula.curso.codigo == null}"> selected</c:if>> </option>  
                             <c:forEach items="${cursos}" var="curso">
-                                <option value="${curso.codigo}" <c:if test="${matricula.curso.codigo == curso.codigo}"> selected</c:if>>${curso.descricao}</option>  
+                                <option value="${curso.codigo}" <c:if test="${matricula.curso.codigo == curso.codigo}"> selected</c:if>>
+                                    ${curso.descricao}
+                                </option>  
                             </c:forEach>
                         </select>
                     </td>
@@ -35,10 +37,12 @@
                 <tr>
                     <td>Disciplina:</td>
                     <td>
-                        <select name="optDisciplina" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="0" <c:if test="${matricula.disciplina.descricao == null}"> selected</c:if>> </option>  
+                        <select name="optDisciplina" >
+                            <option value="0" <c:if test="${matricula.disciplina.codigo == null}"> selected</c:if>> </option>  
                             <c:forEach items="${disciplinas}" var="disciplina">
-                                <option value="${disciplina.codigo}" <c:if test="${matricula.disciplina.codigo == disciplina.codigo}"> selected</c:if>>${disciplina.descricao}</option>  
+                                <option value="${disciplina.codigo}" <c:if test="${matricula.disciplina.codigo == disciplina.codigo}"> selected</c:if>>
+                                    ${disciplina.descricao}
+                                </option>  
                             </c:forEach>
                         </select>
                     </td>
@@ -46,10 +50,12 @@
                 <tr>
                     <td>Turma:</td>
                     <td>
-                        <select name="optTurma" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <select name="optTurma" >
                             <option value="0" <c:if test="${matricula.turma.codigo == null}"> selected</c:if>> </option>  
                             <c:forEach items="${turmas}" var="turma">
-                                <option value="${turma.codigo}" <c:if test="${matricula.turma.codigo == turma.codigo}"> selected</c:if>>${turma.codigo}</option>  
+                                <option value="${turma.codigo}" <c:if test="${matricula.turma.codigo == turma.codigo}"> selected</c:if>>
+                                    ${turma.codigo}
+                                </option>  
                             </c:forEach>
                         </select>
                     </td>
@@ -57,10 +63,12 @@
                 <tr>
                     <td>Aluno:</td>
                     <td>
-                        <select name="optAluno" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="0" <c:if test="${matricula.aluno.nome == null}"> selected</c:if>> </option>  
+                        <select name="optAluno" >
+                            <option value="0" <c:if test="${matricula.aluno.matricula == null}"> selected</c:if>> </option>  
                             <c:forEach items="${alunos}" var="aluno">
-                                <option value="${aluno.matricula}" <c:if test="${matricula.aluno.matricula == aluno.matricula}"> selected</c:if>>${aluno.nome}</option>  
+                                <option value="${aluno.matricula}" <c:if test="${matricula.aluno.matricula == aluno.matricula}"> selected</c:if>>
+                                    ${aluno.nome}
+                                </option>  
                             </c:forEach>
                         </select>
                     </td>

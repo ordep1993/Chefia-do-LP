@@ -28,7 +28,7 @@
                         <td><c:out value="${matricula.codigo}"/></td>
                         <td><c:out value="${matricula.curso.descricao}"/></td>
                         <td><c:out value="${matricula.disciplina.descricao}"/></td>
-                        <td><c:out value="${matricula.codigoTurma}"/></td>
+                        <td><c:out value="${matricula.turma.codigo}"/></td>
                         <td><c:out value="${matricula.aluno.nome}"/></td>
 
                         <td><a href="ManterMatriculaController?acao=prepararOperacao&operacao=editar&codigo=${matricula.codigo}"/>">Editar</a></td>

@@ -38,8 +38,8 @@ public class ManterCursoController extends HttpServlet {
     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         try {
             String operacao = request.getParameter("operacao");
-            request.setAttribute("operacao", operacao);           
-            request.setAttribute("cursos", CursoDAO.getInstance().getAllCursos());
+            request.setAttribute("operacao", operacao);                
+            request.setAttribute("professores", ProfessorDAO.getInstance().getAllProfessores());
             if (!operacao.equals("incluir")) {
                 int codigo = Integer.parseInt(request.getParameter("codigo"));
                 curso = CursoDAO.getInstance().getCurso(codigo);

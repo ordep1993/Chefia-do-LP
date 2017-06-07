@@ -12,8 +12,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -50,8 +48,13 @@ public class Matricula implements Serializable {
     public Matricula() {
     }
 
-    public Matricula(Integer codigo) {
+    public Matricula(Integer codigo , Aluno codigoAluno , Curso codigoCurso , Disciplina codigoDisciplina , Turma codigoTurma) {
         this.codigo = codigo;
+        this.codigoAluno = codigoAluno;
+        this.codigoCurso = codigoCurso;
+        this.codigoDisciplina = codigoDisciplina;
+        this.codigoTurma = codigoTurma;
+        
     }
 
     public Integer getCodigo() {

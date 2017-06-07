@@ -36,10 +36,12 @@
                 <tr>
                     <td>Aluno</td>
                     <td>
-                        <select name="optAluno" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <select name="optAluno" >
                             <option value="0" <c:if test="${avaliacao.aluno.matricula == null}"> selected</c:if>> </option>  
                             <c:forEach items="${alunos}" var="aluno">
-                                <option value="${aluno.matricula}" <c:if test="${avaliacao.aluno.matricula == aluno.matricula}"> selected</c:if>>${aluno.nome}</option>  
+                                <option value="${aluno.matricula}" <c:if test="${avaliacao.aluno.matricula == aluno.matricula}"> selected</c:if>>
+                                    ${aluno.nome}
+                                </option>  
                             </c:forEach>
                         </select>
                     </td>   

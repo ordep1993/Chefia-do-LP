@@ -32,6 +32,7 @@ public class PesquisarCursoController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setAttribute("cursos", CursoDAO.getInstance().getAllCursos());
+        request.setAttribute("professores" , ProfessorDAO.getInstance().getAllProfessores());
         RequestDispatcher view = request.getRequestDispatcher("/pesquisarCurso.jsp");
         view.forward(request, response);
     }

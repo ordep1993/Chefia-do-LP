@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package modelo;
 
 import java.io.Serializable;
@@ -18,10 +22,18 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+/**
+ *
+ * @author weber
+ */
 @Entity
 @Table(name = "curso")
 @XmlRootElement
+
 public class Curso implements Serializable {
+
+    @OneToMany(mappedBy = "codigoCurso")
+    private Collection<Matricula> matriculaCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -41,8 +53,6 @@ public class Curso implements Serializable {
     @JoinColumn(name = "codigoProfessor", referencedColumnName = "matricula")
     @ManyToOne(optional = false)
     private Professor codigoProfessor;
-    @OneToMany(mappedBy = "codigoCurso")
-    private Collection<Matricula> matriculaCollection;
 
     public Curso() {
     }
@@ -51,7 +61,7 @@ public class Curso implements Serializable {
         this.codigo = codigo;
     }
 
-    public Curso(Integer codigo, String descricao, int cargaHoraria , Professor codigoProfessor) {
+    public Curso(Integer codigo, String descricao, int cargaHoraria, Professor codigoProfessor) {
         this.codigo = codigo;
         this.descricao = descricao;
         this.cargaHoraria = cargaHoraria;
@@ -90,15 +100,6 @@ public class Curso implements Serializable {
         this.codigoProfessor = codigoProfessor;
     }
 
-    @XmlTransient
-    public Collection<Matricula> getMatriculaCollection() {
-        return matriculaCollection;
-    }
-
-    public void setMatriculaCollection(Collection<Matricula> matriculaCollection) {
-        this.matriculaCollection = matriculaCollection;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -122,6 +123,15 @@ public class Curso implements Serializable {
     @Override
     public String toString() {
         return "modelo.Curso[ codigo=" + codigo + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Matricula> getMatriculaCollection() {
+        return matriculaCollection;
+    }
+
+    public void setMatriculaCollection(Collection<Matricula> matriculaCollection) {
+        this.matriculaCollection = matriculaCollection;
     }
     
 }
